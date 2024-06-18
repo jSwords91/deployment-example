@@ -56,3 +56,16 @@ Get the ID (e.g. bd2efb4d8b3c) anr run:
 
 * Github actions workflows. Automate test & build.
 
+
+in Terminal
+
+docker tag fastapi-iris-app:latest jscontainertest.azurecr.io/fastapi-iris-app:latest
+
+docker push jscontainertest.azurecr.io/fastapi-iris-app:latest
+
+
+In Azure
+Create Kuberentes resource
+az aks start --resource-group rg-js-personal --name js-kubernetes-test
+
+az aks update --name js-kubernetes-test --resource-group rg-js-personal --attach-acr jscontainertest
